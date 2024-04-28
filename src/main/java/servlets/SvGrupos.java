@@ -26,22 +26,21 @@ public class SvGrupos extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
-        String accion = request.getParameter("accion");
-
-        if ("altaGrupos".equals(accion)) {
-            List<Materia> listaMaterias = control.traerMaterias();
-            HttpSession misesion = request.getSession();
-            misesion.setAttribute("listaMaterias", listaMaterias);
-            response.sendRedirect("altaGrupos.jsp");
-        } else {
-            List<Grupo> listaGrupos = control.traerGrupos();
-            HttpSession misesion = request.getSession();
+            throws ServletException, IOException {           
+        HttpSession misesion = request.getSession();
+        try {
+            Long id = Long.parseLong(request.getParameter("id"));
+            misesion.setAttribute("idMateria", id);
+            Materia miMateria = control.traerMateria(id);
+            List<Grupo> listaGrupos = miMateria.getListaGrupos();
             misesion.setAttribute("listaGrupos", listaGrupos);
             response.sendRedirect("verGrupos.jsp");
-        }
-
+        } catch (NumberFormatException e) {
+            Materia miMateria = control.traerMateria((Long) request.getSession().getAttribute("idMateria"));
+            List<Grupo> listaGrupos = miMateria.getListaGrupos();
+            misesion.setAttribute("listaGrupos", listaGrupos);
+            response.sendRedirect("verGrupos.jsp");
+        }     
     }
 
     @Override

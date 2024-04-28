@@ -28,7 +28,8 @@ public class SvMaterias extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Materia> listaMaterias = control.traerMaterias();
+        Maestro miMaestro = (Maestro) request.getSession().getAttribute("miMaestro");
+        List<Materia> listaMaterias = miMaestro.getListaMaterias();
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaMaterias", listaMaterias);
         response.sendRedirect("verMaterias.jsp");
@@ -48,7 +49,7 @@ public class SvMaterias extends HttpServlet {
         
         control.crearMateria(nombre, listaGrupos, listaMaestros, listaTrabajos);
         
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("SvMaterias");
     }
 
     @Override

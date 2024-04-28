@@ -26,23 +26,7 @@
         Gestión
     </div>
     
-    <!-- Nav Item - Maestros -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMaestros"
-           aria-expanded="true" aria-controls="collapseMaestros">
-            <i class="fas fa-solid fa-user"></i>
-            <span>Maestros</span>
-        </a>
-        <div id="collapseMaestros" class="collapse" aria-labelledby="headingMaestros" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Acciones:</h6>
-                <a class="collapse-item" href="SvMaestros">Ver Maestros</a>
-                <a class="collapse-item" href="SvMaestros?accion=altaMaestros">Alta Maestros</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Nav Item - Alumnos -->
+    <!-- Nav Item - Alumnos
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAlumnos"
            aria-expanded="true" aria-controls="collapseAlumnos">
@@ -57,9 +41,9 @@
                 <a class="collapse-item" href="SvAlumnos?accion=altaEstudiantes">Alta Alumnos</a>
             </div>
         </div>
-    </li>
+    </li> -->
     
-    <!-- Nav Item - Grupos -->
+    <!-- Nav Item - Grupos 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGrupos"
            aria-expanded="true" aria-controls="collapseGrupos">
@@ -74,7 +58,7 @@
                 <a class="collapse-item" href="SvGrupos?accion=altaGrupos">Alta Grupos</a>
             </div>
         </div>
-    </li>
+    </li> -->
     
     <!-- Nav Item - Materias -->
     <li class="nav-item">
@@ -87,12 +71,11 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Acciones:</h6>
                 <a class="collapse-item" href="SvMaterias">Ver Materias</a>
-                <a class="collapse-item" href="altaMaterias.jsp">Alta Materias</a>
             </div>
         </div>
     </li>
     
-    <!-- Nav Item - Trabajos -->
+    <!-- Nav Item - Trabajos 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTrabajos"
            aria-expanded="true" aria-controls="collapseTrabajos">
@@ -103,13 +86,13 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Acciones:</h6>
-                <a class="collapse-item" href="">Ver Trabajos</a>
-                <a class="collapse-item" href="altaTrabajos.jsp">Alta Trabajos</a>
+                <a class="collapse-item" href="SvTrabajos">Ver Trabajos</a>
+                <a class="collapse-item" href="SvTrabajos?accion=altaTrabajos">Alta Trabajos</a>
             </div>
         </div>
-    </li>
+    </li> -->
     
-    <!-- Nav Item - Calificaciones -->
+    <!-- Nav Item - Calificaciones 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCalificaciones"
            aria-expanded="true" aria-controls="collapseCalificaciones">
@@ -120,11 +103,11 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Acciones:</h6>
-                <a class="collapse-item" href="">Ver Calificaciones</a>
-                <a class="collapse-item" href="altaCalificaciones.jsp">Alta Calificaciones</a>
+                <a class="collapse-item" href="SvCalificaciones">Ver Calificaciones</a>
+                <a class="collapse-item" href="SvCalificaciones?accion=altaCalificaciones">Alta Calificaciones</a>
             </div>
         </div>
-    </li>
+    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">

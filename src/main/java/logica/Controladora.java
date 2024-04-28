@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import persistencia.ControladoraPersistencia;
 
 public class Controladora {
@@ -214,20 +215,19 @@ public class Controladora {
         controlPersis.borrarCalificacion(id);
     }
     
-    public boolean comprobarIngreso(String username, String password) {
-        boolean ingreso = false;
-        
-        List<Maestro> listaMaestros = new ArrayList<Maestro>();
+    public Optional<Maestro> comprobarIngreso(String username, String password) {
+        List<Maestro> listaMaestros = new ArrayList<>();
         listaMaestros = controlPersis.traerMaestros();
         
         for(Maestro maestro : listaMaestros) {
             if (maestro.getUsername().equals(username)) {
                 if(maestro.getPassword().equals(password)) {
-                    ingreso = true;
+                    return Optional.of(maestro);
+                    
                 }
             }
         }
-        return ingreso;
+        return Optional.empty();
     }
 
     public List<Materia> obtenerMateriasSeleccionadas(String[] idsSeleccionados, List<Materia> listaMaterias) {
@@ -259,8 +259,6 @@ public class Controladora {
     return materiasEncontradas;
 }
 
-    
-
     public Grupo obtenerGrupoSeleccionado(String grupoSeleccionado, List<Grupo> gruposBD) {
         Long idGrupoSeleccionado = Long.parseLong(grupoSeleccionado);
         for(Grupo grupo : gruposBD) {
@@ -269,5 +267,50 @@ public class Controladora {
             }
         }
         return null;
+    }
+    
+    public TipoTrabajo obtenerTipoTrabajoSeleccionado(String tipoTrabajoSeleccionado, List<TipoTrabajo> tipoTrabajosBD) {
+        Long idTipoTrabajoSeleccionado = Long.parseLong(tipoTrabajoSeleccionado);
+        for(TipoTrabajo tipoTrabajo : tipoTrabajosBD) {
+            if(tipoTrabajo.getId().equals(idTipoTrabajoSeleccionado)) {
+                return tipoTrabajo;
+            }
+        }
+        return null;
+    }
+    
+    public Materia obtenerMateriaSeleccionada(String materiaSeleccionada, List<Materia> materiasBD) {
+        Long idMateriaSeleccionada = Long.parseLong(materiaSeleccionada);
+        for(Materia materia : materiasBD) {
+            if(materia.getId_materia().equals(idMateriaSeleccionada)) {
+                return materia;
+            }
+        }
+        return null;
+    }
+    
+    public Trabajo obtenerTrabajoSeleccionado(String trabajoSeleccionado, List<Trabajo> trabajosBD) {
+        Long idTrabajoSeleccionado = Long.parseLong(trabajoSeleccionado);
+        for(Trabajo trabajo : trabajosBD) {
+            if(trabajo.getId().equals(idTrabajoSeleccionado)) {
+                return trabajo;
+            }
+        }
+        return null;
+    }
+    
+    public Estudiante obtenerEstudianteSeleccionado(String estudianteSeleccionado, List<Estudiante> estudiantesBD) {
+        Long idEstudianteSeleccionado = Long.parseLong(estudianteSeleccionado);
+        for(Estudiante estudiante : estudiantesBD) {
+            if(estudiante.getId_estudiante().equals(idEstudianteSeleccionado)) {
+                return estudiante;
+            }
+        }
+        return null;
+    }
+    
+    public boolean existeCalificacion(Estudiante estudiante, Trabajo trabajo){
+        
+        return false;
     }
 }

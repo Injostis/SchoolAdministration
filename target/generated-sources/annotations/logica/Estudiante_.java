@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import logica.Calificacion;
 import logica.Grupo;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-04-10T20:08:22")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2024-04-26T16:31:26")
 @StaticMetamodel(Estudiante.class)
 public class Estudiante_ { 
 
